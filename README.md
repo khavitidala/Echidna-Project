@@ -5,7 +5,7 @@ Echidna project is an app to visualize selection and insertion sorting algorithm
 ### 1. Download this repository
 You can use download zip button on github or use cmd/terminal to clone this repository
 ### 2. Run app using executable installer for windows
-Just click echidna.exe and choose folder installer, then click main.exe inside your folder installer
+Just click dist.exe and choose folder installer, then click main.exe inside your folder installer
 ### 3. Run app using python directly
 Make sure you've installed python and pygame module before, then open a terminal/cmd to write command below:
 ```
