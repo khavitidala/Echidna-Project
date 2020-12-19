@@ -242,7 +242,7 @@ class Echidna:
         self.ins_dinst = 30+self.selection_screen.width+20
         self.insertion_screen = Sort_screen(self, 320, 500, 5, self.bg_color, (0, 0, 0), (self.ins_dinst, 80))
         self.ins_surf = self.insertion_screen.surf.get_rect()
-        self.nilaimax = 100
+        self.nilaimax = int(input("Masukkan nilai maksimal dari n (yang dapat divisualisasikan hanya sampai 490):"))
         self.selection_obj = Sort_Object(self, (25, 85), (4, 133, 253), self.selection_screen.width, self.selection_screen.height)
         self.insertion_obj = Sort_Object(self, (35+self.selection_screen.width+20, 85), (4, 133, 253), self.insertion_screen.width, self.insertion_screen.height)
         self.sel_rect = self.selection_obj.list_of_rect
