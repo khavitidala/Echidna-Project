@@ -3,6 +3,7 @@ import pygame
 import time
 import random
 import threading
+
 class Button:
     def __init__(self, sortApp, text, width, height, position, color, font):
         self.screen = sortApp.screen
@@ -242,7 +243,7 @@ class Echidna:
         self.ins_dinst = 30+self.selection_screen.width+20
         self.insertion_screen = Sort_screen(self, 320, 500, 5, self.bg_color, (0, 0, 0), (self.ins_dinst, 80))
         self.ins_surf = self.insertion_screen.surf.get_rect()
-        self.nilaimax = int(input("Masukkan nilai maksimal dari n (yang dapat divisualisasikan hanya sampai 490):"))
+        self.nilaimax = 100
         self.selection_obj = Sort_Object(self, (25, 85), (4, 133, 253), self.selection_screen.width, self.selection_screen.height)
         self.insertion_obj = Sort_Object(self, (35+self.selection_screen.width+20, 85), (4, 133, 253), self.insertion_screen.width, self.insertion_screen.height)
         self.sel_rect = self.selection_obj.list_of_rect
@@ -253,13 +254,13 @@ class Echidna:
         self.ins_sorting = Insertion(self, (4, 133, 253))
         self.spriteSort = pygame.sprite.RenderUpdates(self.sel_sorting)
         self.spriteSort2 = pygame.sprite.RenderUpdates(self.ins_sorting)
-        self.clock = pygame.time.Clock()
+        #self.clock = pygame.time.Clock()
         #button
-        self.sort_button = Button(self, "Sort", 200, 50, (self.screen.get_rect().centerx-100,self.height-10-80), (0, 0, 0), ("Arial", 48, (255, 255, 255)))
+        self.sort_button = Button(self, "Sort", 200, 50, (self.screen.get_rect().centerx-100,self.height-10-80), (0, 0, 0), ("Arial", 30, (255, 255, 255)))
         self.sel_title = Button(self, "Selection", 200, 50, (75,25), self.bg_color, ("Arial", 32, (0, 0, 0)))
         self.ins_title = Button(self, "Insertion", 200, 50, (self.selection_screen.width+30+75,25), self.bg_color, ("Arial", 32, (0, 0, 0)))
-        self.runtime_sel = Button(self, "Running time: "+str(self.sel_sorting.running_time),200, 50,  (self.screen.get_rect().centerx-100,self.height-10-100), self.bg_color, ("Arial", 16, (0, 0, 0)))
-        self.runtime_ins = Button(self, "Running time: "+str(self.ins_sorting.running_time),200, 50,  (self.screen.get_rect().centerx+100,self.height-10-100), self.bg_color, ("Arial", 16, (0,0,0)))
+        #self.runtime_sel = Button(self, "Running time: "+str(self.sel_sorting.running_time),200, 50,  (self.screen.get_rect().centerx-100,self.height-10-100), self.bg_color, ("Arial", 16, (0, 0, 0)))
+        #self.runtime_ins = Button(self, "Running time: "+str(self.ins_sorting.running_time),200, 50,  (self.screen.get_rect().centerx+100,self.height-10-100), self.bg_color, ("Arial", 16, (0,0,0)))
 
     def run_app(self):
         while True:
